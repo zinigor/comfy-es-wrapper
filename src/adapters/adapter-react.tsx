@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from 'react'
-import { ComfyEditor, ComfyEditorConfig } from '../editor'
+import { useEffect, useRef, CSSProperties } from 'react'
+import { ComfyEditor, ComfyEditorConfig } from '../editor/index'
 
 export interface ComfyEditorProps extends Omit<ComfyEditorConfig, 'container'> {
   className?: string
-  style?: React.CSSProperties
+  style?: CSSProperties
 }
 
 export const ComfyEditorReact: React.FC<ComfyEditorProps> = ({
@@ -35,7 +35,7 @@ export const ComfyEditorReact: React.FC<ComfyEditorProps> = ({
       ref={containerRef}
       className={className}
       style={style}
-    />
+    ></div>
   )
 }
 

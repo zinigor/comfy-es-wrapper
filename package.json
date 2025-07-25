@@ -32,17 +32,20 @@
   "author": "",
   "license": "ISC",
   "peerDependencies": {
-    "vue": "^3.0.0",
     "@comfyorg/litegraph": "^0.7.0"
   },
   "dependencies": {
     "@comfyorg/comfyui-frontend": "github:Comfy-Org/ComfyUI_frontend",
-    "@comfyorg/litegraph": "^0.16.16",
+    "@comfyorg/litegraph": "^0.7.0",
+    "@types/vue": "^1.0.31",
     "pinia": "^3.0.3",
+    "react": "^19.1.0",
     "vue": "^3.5.18"
   },
   "devDependencies": {
     "@types/node": "^24.1.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-vue": "^6.0.0",
     "rollup-plugin-copy": "^3.5.0",
     "typescript": "^5.8.3",

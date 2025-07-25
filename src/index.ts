@@ -1,7 +1,8 @@
 // Core exports
 export * from './editor'
 export * from './components'
-// export * from './adapters/react'
+export * from './types'
+export * from './utils'
 
 // CSS imports (make optional)
 export const loadStyles = () => {
