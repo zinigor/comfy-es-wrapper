@@ -1,23 +1,24 @@
-import { useEffect, useRef, CSSProperties } from 'react'
-import { ComfyEditor, ComfyEditorConfig } from '../editor/index'
+/* @jsxRuntime classic */
 
-export interface ComfyEditorProps extends Omit<ComfyEditorConfig, 'container'> {
-  className?: string
-  style?: CSSProperties
+import { useEffect, useRef } from 'react'
+import { ComfyEditor } from '../editor/index'
+
+import type { CSSProperties } from 'react'
+
+interface EditorReactData {
+  className: string,
+  style: CSSProperties,
+  config?: object
 }
 
-export const ComfyEditorReact: React.FC<ComfyEditorProps> = ({
-  className,
-  style,
-  ...config
-}) => {
+export const ComfyEditorReact = ( properties: EditorReactData ) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const editorRef = useRef<ComfyEditor | null>(null)
 
   useEffect(() => {
     if (containerRef.current && !editorRef.current) {
       editorRef.current = new ComfyEditor({
-        ...config,
+        ...properties.config,
         container: containerRef.current
       })
     }
@@ -33,8 +34,8 @@ export const ComfyEditorReact: React.FC<ComfyEditorProps> = ({
   return (
     <div
       ref={containerRef}
-      className={className}
-      style={style}
+      className={properties.className}
+      style={properties.style}
     ></div>
   )
 }

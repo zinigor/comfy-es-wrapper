@@ -6,7 +6,7 @@ export * from './utils'
 
 // CSS imports (make optional)
 export const loadStyles = () => {
-  // import('./assets/comfyui.css')
+   // import('./assets/comfyui.css')
 }
 
 // Version compatibility check

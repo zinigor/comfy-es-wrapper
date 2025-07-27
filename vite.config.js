@@ -14,8 +14,8 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@comfyui': resolve(__dirname, 'node_modules/comfyui_frontend/src'),
-      '@': resolve(__dirname, 'src')
+      '@comfyui': resolve(__dirname, 'node_modules/@comfyorg/comfyui-frontend/src'),
+      '@': resolve(__dirname, 'node_modules/@comfyorg/comfyui-frontend/src')
     }
   },
   build: {
@@ -32,13 +32,16 @@ export default defineConfig({
       external: [
         'vue',
         '@comfyorg/litegraph',
-        'pinia'
+        '@comfyorg/comfyui-frontend',
+        'pinia',
+        'react',
       ],
       output: {
         globals: {
           'vue': 'Vue',
           '@comfyorg/litegraph': 'LiteGraph',
-          'pinia': 'Pinia'
+          'pinia': 'Pinia',
+          'react': 'React'
         }
       },
       plugins: [
@@ -52,6 +55,9 @@ export default defineConfig({
           hook: 'writeBundle'
         })
       ]
-    }
+    },
+  },
+  optimizeDeps: {
+    exclude: ['@comfyorg/comfyui-frontend']
   }
 })

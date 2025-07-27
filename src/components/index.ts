@@ -1,5 +1,7 @@
-import { createApp, App as VueApp } from 'vue'
+import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+
+import type { App as VueApp } from 'vue'
 
 // Import ComfyUI Vue components (adjust paths as needed)
 // import NodeEditor from '@comfyui/components/NodeEditor.vue'
@@ -41,10 +43,10 @@ export class ComfyVueWrapper implements VueComponentWrapper {
 }
 
 // Factory functions for easy component creation
-export const createNodeEditor = (props: any) => {
-  // return new ComfyVueWrapper(NodeEditor, props)
-}
+//export const createNodeEditor = (props: any) => {
+//  return new ComfyVueWrapper(NodeEditor, props)
+//}
 
-export const createNodeLibrary = (props: any) => {
-  // return new ComfyVueWrapper(NodeLibrary, props)
-}
+//export const createNodeLibrary = (props: any) => {
+//  return new ComfyVueWrapper(NodeLibrary, props)
+//}
