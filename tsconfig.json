@@ -20,7 +20,7 @@
       "@comfyui/*": ["node_modules/@comfyorg/comfyui-frontend/src/*"],
       "@/*": ["node_modules/@comfyorg/comfyui-frontend/src/*"]
     },
-    "types": "node"
+    "types": ["node"]
   },
   "include": [
     "src/**/*.ts",
