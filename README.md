@@ -1,6 +1,16 @@
-# comfy-es-wrapper
+# @zinigor/comfyui-es-wrapper
 
-**Comfy-ES-Wrapper** is a frontend wrapper for ComfyUI, designed to provide ESM (ECMAScript Modules) imports and utilities for building, editing, and interacting with ComfyUI workflows in modern web applications. It offers a modular API for workflow and node manipulation, as well as integrations for Vue and React.
+**@zinigor/comfyui-es-wrapper** is a frontend wrapper for ComfyUI, designed to provide ESM (ECMAScript Modules) imports and utilities for building, editing, and interacting with ComfyUI workflows in modern web applications. It offers a modular API for workflow and node manipulation, as well as integrations for Vue and React.
+
+## Installation
+
+```bash
+npm install @zinigor/comfyui-es-wrapper
+# or
+yarn add @zinigor/comfyui-es-wrapper
+# or  
+pnpm add @zinigor/comfyui-es-wrapper
+```
 
 ---
 
@@ -19,7 +29,7 @@
 ### Workflow Utilities
 
 ```typescript
-import { workflowUtils } from 'comfy-es-wrapper'
+import { workflowUtils } from '@zinigor/comfyui-es-wrapper'
 // or default import
 
 const isValid = workflowUtils.validateWorkflow(workflow)
@@ -33,7 +43,7 @@ const connections = workflowUtils.getWorkflowConnections(workflow)
 ### Node Utilities
 
 ```typescript
-import { nodeUtils } from 'comfy-es-wrapper'
+import { nodeUtils } from '@zinigor/comfyui-es-wrapper'
 
 const node = nodeUtils.createNode('CustomType', { properties: { foo: 'bar' } })
 const id = nodeUtils.generateNodeId()
@@ -44,7 +54,7 @@ const fooValue = nodeUtils.getNodeProperty(node, 'foo')
 ### API Utilities
 
 ```typescript
-import { apiUtils } from 'comfy-es-wrapper'
+import { apiUtils } from '@zinigor/comfyui-es-wrapper'
 
 const nodeTypes = await apiUtils.fetchNodeTypes()
 const result = await apiUtils.executeWorkflow(workflow)
@@ -58,7 +68,7 @@ const ws = apiUtils.createWebSocketConnection((data) => { /* handle messages */ 
 #### With Vanilla JS
 
 ```typescript
-import { ComfyEditor } from 'comfy-es-wrapper'
+import { ComfyEditor } from '@zinigor/comfyui-es-wrapper'
 
 const config = { container: document.getElementById('editor-container') }
 const editor = new ComfyEditor(config)
@@ -70,7 +80,7 @@ editor.destroy()
 #### With React
 
 ```tsx
-import { ComfyEditorReact } from 'comfy-es-wrapper'
+import { ComfyEditorReact } from '@zinigor/comfyui-es-wrapper'
 
 function MyComponent() {
   return (
@@ -87,7 +97,7 @@ function MyComponent() {
 
 ```typescript
 // Import Vue components (see src/components/index.ts)
-// import NodeEditor from 'comfy-es-wrapper/components/NodeEditor.vue'
+// import NodeEditor from '@zinigor/comfyui-es-wrapper/components/NodeEditor.vue'
 ```
 
 ---
@@ -142,7 +152,7 @@ export interface ComfyOutput {
 ## Usage Example
 
 ```typescript
-import { workflowUtils, nodeUtils, apiUtils, ComfyEditor } from 'comfy-es-wrapper'
+import { workflowUtils, nodeUtils, apiUtils, ComfyEditor } from '@zinigor/comfyui-es-wrapper'
 
 // Build a simple workflow
 const nodeA = nodeUtils.createNode('Input')
